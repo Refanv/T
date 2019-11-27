@@ -15,7 +15,7 @@ public class _02_T_Assert {
         System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver.exe");
         webDriver = new FirefoxDriver();
         webDriver.manage().window().maximize();
-        webDriver.get("https://www.bilibili.com/");
+        webDriver.get("https://www.baidu.com/");
         String str = webDriver.getCurrentUrl();
         Assert.assertEquals(str, "https://www.baidu.com/", "wrong url.");
     }
@@ -34,7 +34,7 @@ public class _02_T_Assert {
     public void assertEquals_() {
         String a = "eu";
 //        String b = "eu";
-        String b = "edu";
+        String b = "eu";
         String c = null;
 
         Assert.assertEquals(a,b);
@@ -72,7 +72,7 @@ public class _02_T_Assert {
 
     @Test
     public void assertNull_fail() {
-        String a = "abc";//空值
+        String a = "";//空值
         webDriver = SeleniumDriver.initialWebDriver("ff");
         Assert.assertNull(a);
         webDriver.quit();//校验失败，不会执行关闭浏览器;在AfterTest中可以关闭

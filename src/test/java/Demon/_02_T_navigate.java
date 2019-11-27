@@ -3,13 +3,9 @@ package Demon;
 import com.autoframework.M;
 import com.autoframework.driver.SeleniumDriver;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
-
-import javax.swing.*;
 
 public class _02_T_navigate {
     private WebDriver webDriver;
@@ -18,7 +14,6 @@ public class _02_T_navigate {
     public void navigate() {
 //        WebDriver webDriver = SeleniumDriver.initialWebDriver("FF");局部变量同名，会覆盖成员变量
         webDriver = SeleniumDriver.initialWebDriver("FF");
-        webDriver.manage().window().maximize();
         webDriver.get("https://www.bilibili.com");
         M.sp(1);
         String str = webDriver.getCurrentUrl();
