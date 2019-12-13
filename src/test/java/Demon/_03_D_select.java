@@ -16,7 +16,7 @@ public class _03_D_select {
 
     @BeforeTest
     public void baidu() {
-        driver = SeleniumDriver.initialWebDriver("FF");
+        driver = SeleniumDriver.driverFactory("FF");
         driver.navigate().to("https:www.baidu.com/");
     }
 

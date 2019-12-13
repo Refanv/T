@@ -12,8 +12,8 @@ public class _02_T_navigate {
 
     @Test
     public void navigate() {
-//        WebDriver webDriver = SeleniumDriver.initialWebDriver("FF");局部变量同名，会覆盖成员变量
-        webDriver = SeleniumDriver.initialWebDriver("FF");
+//        WebDriver webDriver = SeleniumDriver.driverFactory("FF");局部变量同名，会覆盖成员变量
+        webDriver = SeleniumDriver.driverFactory("FF");
         webDriver.get("https://www.bilibili.com");
         M.sp(1);
         String str = webDriver.getCurrentUrl();

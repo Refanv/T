@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class _02_T_Assert {
     WebDriver webDriver;
 
-    @Test
+//    @Test
     public void assertURL() {
         System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver.exe");
         webDriver = new FirefoxDriver();
@@ -20,7 +20,7 @@ public class _02_T_Assert {
         Assert.assertEquals(str, "https://www.baidu.com/", "wrong url.");
     }
 
-    @Test
+//    @Test
     public void assertTitle() {
         System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver.exe");
         webDriver = new FirefoxDriver();
@@ -70,10 +70,10 @@ public class _02_T_Assert {
         Assert.assertNotEquals(b,a,"assertNotEquals");
     }
 
-    @Test
+//    @Test
     public void assertNull_fail() {
         String a = "";//空值
-        webDriver = SeleniumDriver.initialWebDriver("ff");
+        webDriver = SeleniumDriver.driverFactory("ff");
         Assert.assertNull(a);
         webDriver.quit();//校验失败，不会执行关闭浏览器;在AfterTest中可以关闭
     }

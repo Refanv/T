@@ -7,12 +7,17 @@ import org.openqa.selenium.WebDriver;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-public class CapScreen {
+public final class CapScreen {
 //    public static String path = System.getProperty("user.dir") + "\\capscreen";
     private static String dir ="capscreen//";
     private static int num = 1;
     private static String postfix = ".jpg";
+
+    private CapScreen() {
+    }
 
     public static void screenShot(WebDriver webDriver) {
 
@@ -41,7 +46,11 @@ public class CapScreen {
     private static String getName() {
         String className = Thread.currentThread().getStackTrace()[3].getClassName();
         String method = Thread.currentThread().getStackTrace()[3].getMethodName();
-        String str = className + "@" + method;
+
+        Date dNow = new Date( );
+        SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd_hh-mm-ss");
+        String time = ft.format(dNow);
+        String str = className + "." + method + "@" + time;
         return str;
     }
 }

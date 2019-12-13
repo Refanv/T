@@ -19,7 +19,7 @@ public class _03_T_handlers {
 
     @BeforeTest
     public void baidu() {
-        driver = SeleniumDriver.initialWebDriver("FF");
+        driver = SeleniumDriver.driverFactory("FF");
         driver.navigate().to("https://www.baidu.com/");
     }
 

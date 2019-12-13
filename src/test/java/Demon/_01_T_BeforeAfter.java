@@ -2,8 +2,36 @@ package Demon;
 
 import org.testng.annotations.*;
 
+/**
+ *  Before Suite.
+ *  BeforeTest
+ *  BeforeClass
+ *  BeforeMethod
+ *  test_0
+ *  AfterMethod
+ *  BeforeMethod
+ *  test_1
+ *  AfterMethod
+ *  BeforeMethod
+ *  test_3
+ *  AfterMethod
+ *  BeforeMethod
+ *  test_4
+ *  AfterMethod
+ *  AfterClass
+ *  AfterTest
+ */
 public class _01_T_BeforeAfter {
 
+    @BeforeGroups
+    void t() {
+        System.out.println("Before Groups.");
+    }
+
+    @BeforeSuite
+    void s() {
+        System.out.println("Before Suite.");
+    }
     @BeforeClass
     void testBeforeClass() {
         System.out.println("BeforeClass");

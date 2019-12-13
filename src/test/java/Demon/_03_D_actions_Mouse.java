@@ -12,10 +12,9 @@ import org.testng.annotations.Test;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.security.Key;
 
 public class _03_D_actions_Mouse {
-    WebDriver driver = SeleniumDriver.initialWebDriver("FF");;
+    WebDriver driver = SeleniumDriver.driverFactory("FF");;
 
     @BeforeTest
     public void baidu() {

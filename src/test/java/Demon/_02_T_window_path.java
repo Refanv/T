@@ -38,7 +38,7 @@ public class _02_T_window_path {
 
     @Test
     public void window() {
-        driver = SeleniumDriver.initialWebDriver("chrome");
+        driver = SeleniumDriver.driverFactory("chrome");
         //print handler
         String handler = driver.getWindowHandle();
         System.out.println("handler = " + handler);

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="DemonTestNG" thread-count="2" parallel="classes">
+    <test name="test">
+        <classes>
+            <class name="Demon._01_T_BeforeAfter">
+                <methods></methods>
+            </class>
+            <class name="Demon._02_T_Assert"></class>
+        </classes>
+    </test>
+</suite>

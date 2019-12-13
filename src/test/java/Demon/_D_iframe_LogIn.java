@@ -3,7 +3,6 @@ package Demon;
 import com.autoframework.M;
 import com.autoframework.driver.CapScreen;
 import com.autoframework.driver.SeleniumDriver;
-import com.sun.source.tree.AssertTree;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,7 +18,7 @@ public class _D_iframe_LogIn {
 
     @BeforeTest
     public void baidu() {
-        driver = SeleniumDriver.initialWebDriver("FF");
+        driver = SeleniumDriver.driverFactory("FF");
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -35,20 +34,20 @@ public class _D_iframe_LogIn {
  */
     @Test
     public void assert_App_Normal() {
-        WebElement lbNormal = driver.findElement(By.id("lbNormal"));
-        Assert.assertTrue(lbNormal.isDisplayed(), "lbNormal is'n displayed.");
+        WebElement lbNormal = driver.findElement(By.id("div_lbNormal"));
+        Assert.assertTrue(lbNormal.isDisplayed(), "div_lbNormal is'n displayed.");
         lbNormal.click();
 
         WebElement lbApp = driver.findElement(By.id("lbApp"));
         Assert.assertTrue(lbApp.isDisplayed(), "lbApp is'n displayed.");
-        Assert.assertFalse(lbNormal.isDisplayed(), "lbNormal is displayed.");
+        Assert.assertFalse(lbNormal.isDisplayed(), "div_lbNormal is displayed.");
         M.sp(3);
     }
 
     @Test
     public void iframe() {
         WebElement iframe = driver.findElement(By.tagName("iframe"));
-        driver.findElement(By.id("lbNormal")).click();
+        driver.findElement(By.id("div_lbNormal")).click();
 
         driver.switchTo().frame(iframe);
         WebElement account = driver.findElement(By.name("email"));
